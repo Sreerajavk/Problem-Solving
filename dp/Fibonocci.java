@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 public class Fibonocci {
 
 
@@ -16,7 +18,6 @@ public class Fibonocci {
     public int fib(int n) {
 
         if(n <= 1) {
-            this.dp[n] = n;
             return  n;
         }
         else {
@@ -24,8 +25,7 @@ public class Fibonocci {
                 return this.dp[n];
             }
             else {
-                this.dp[n] = fib(n-1) + fib(n-2);
-                return this.dp[n];
+                return this.dp[n] = fib(n-1) + fib(n-2);
             }
         }
     }
@@ -38,8 +38,6 @@ public class Fibonocci {
         int n = 10;
         Fibonocci obj = new Fibonocci(n);
         System.out.println(obj.fib(n));
-    }
 
-    
-    
+
 }
