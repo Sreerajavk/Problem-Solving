@@ -1,10 +1,6 @@
 package dp;
 
-import java.util.Arrays;
-
 public class Fibonocci {
-
-
 
     int[] dp;
 
@@ -38,6 +34,6 @@ public class Fibonocci {
         int n = 10;
         Fibonocci obj = new Fibonocci(n);
         System.out.println(obj.fib(n));
-
+    }
 
 }
