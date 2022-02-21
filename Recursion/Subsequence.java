@@ -3,6 +3,10 @@ package Recursion;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Program to print all the subsequence in an array
+*/
+
 public class Subsequence {
     
 
@@ -22,8 +26,11 @@ public class Subsequence {
                 System.err.println();
                 return;
             }
+            //taking the element and calling recursion
             list.add(arr[i]);
             subSeq(i+1, list, arr);
+
+            //not taking the element and calling recursion
             list.remove(list.size() -1 );
             subSeq(i+1, list, arr);
     }
