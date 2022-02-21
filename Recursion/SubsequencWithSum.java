@@ -12,12 +12,16 @@ public class SubsequencWithSum {
 
     public static void main(String[] args) {
         
-        int[] arr = { 1, 2, 1};
-        int sum = 2;
-        subSeqwithSum(0 , arr , 0, new ArrayList<>() , sum);
+        int[] arr = { 2,3,6,7};
+        int sum = 7;
+        // subSeqWithSum(0 , arr , 0, new ArrayList<>() , sum);
+        // System.err.println("Count : " + countSubSeqWithSum(0,arr,0,sum,0));
+
+        printAllSubsequencesWithSum(0,arr,sum,new ArrayList<>());
     }
 
-    static void subSeqwithSum(int i, int[] arr, int cumSum , List<Integer> list, int sum) {
+    //printing the subsequences with a specific sum
+    static void subSeqWithSum(int i, int[] arr, int cumSum , List<Integer> list, int sum) {
         if( i >= arr.length ) {
             if(cumSum == sum) {
                 for(int val : list)
@@ -28,8 +32,43 @@ public class SubsequencWithSum {
         }
 
         list.add(arr[i]);
-        subSeqwithSum(i+1, arr, cumSum+arr[i], list, sum);
+        subSeqWithSum(i+1, arr, cumSum+arr[i], list, sum);
         list.remove(list.size() - 1);
-        subSeqwithSum(i+1, arr, cumSum  ,list, sum);
+        subSeqWithSum(i+1, arr, cumSum  ,list, sum);
+    }
+
+    //conting the subsequence with a specific sum
+    static int countSubSeqWithSum(int i, int[] arr, int cumSum , int sum , int count) {
+        if( i >= arr.length ) {
+            if(cumSum == sum) {
+                return 1;
+            }
+            return 0;
+        }
+
+        int left = countSubSeqWithSum(i+1, arr, cumSum+arr[i], sum,count);
+        int right = countSubSeqWithSum(i+1, arr, cumSum , sum,count);
+
+        return left + right;
+    }
+
+    //printing all the possible sequence with repeatition for a specific sum
+    static void printAllSubsequencesWithSum(int i , int[] arr , int sum , List<Integer> list) {
+        if(i >= arr.length) {
+            if(sum == 0) {
+                for(int val : list)
+                    System.err.print(val);
+                System.err.println();
+            }
+             return;
+        }
+
+        if(arr[i] <= sum)  
+        { 
+            list.add(arr[i]);
+            printAllSubsequencesWithSum(i, arr, sum - arr[i], list);
+            list.remove(list.size() - 1);
+        }      
+        printAllSubsequencesWithSum(i+1, arr, sum, list);
     }
 }
