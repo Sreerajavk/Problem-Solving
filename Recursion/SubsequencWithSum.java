@@ -12,12 +12,14 @@ public class SubsequencWithSum {
 
     public static void main(String[] args) {
         
-        int[] arr = { 2,3,6,7};
-        int sum = 7;
+        int[] arr = { 1,1,1,2,2};
+        int sum = 4;
         // subSeqWithSum(0 , arr , 0, new ArrayList<>() , sum);
         // System.err.println("Count : " + countSubSeqWithSum(0,arr,0,sum,0));
 
-        printAllSubsequencesWithSum(0,arr,sum,new ArrayList<>());
+        // printAllSubsequencesWithSum(0,arr,sum,new ArrayList<>());
+
+        printUniqueCombinations(0, arr, sum, new ArrayList<>());
     }
 
     //printing the subsequences with a specific sum
@@ -52,7 +54,7 @@ public class SubsequencWithSum {
         return left + right;
     }
 
-    //printing all the possible sequence with repeatition for a specific sum
+    //printing all the possible sequence ( combinations ) with repeatition for a specific sum
     static void printAllSubsequencesWithSum(int i , int[] arr , int sum , List<Integer> list) {
         if(i >= arr.length) {
             if(sum == 0) {
@@ -70,5 +72,34 @@ public class SubsequencWithSum {
             list.remove(list.size() - 1);
         }      
         printAllSubsequencesWithSum(i+1, arr, sum, list);
+    }
+
+
+    //printing all the unique combinations witha specific sum
+
+    static void printUniqueCombinations(int i , int[] arr , int sum , List<Integer> list) {
+
+        if( sum == 0) {
+                for(int val : list)
+                    System.err.print(val);
+                System.err.println();
+            
+             return;
+        }
+
+        int ele = arr[i];
+        if( ele  <= sum ) {
+            // list.add(ele);
+            // printUniqueCombinations(i+1, arr, sum-arr[i], list);
+            // list.remove(list.size() - 1);
+            for( int j= i; j < arr.length; j++) {
+                if(j > i && arr[j] == ele ) continue;
+                
+                ele = arr[j];
+                list.add(ele);
+                printUniqueCombinations(j+1, arr, sum-arr[j], list);
+                list.remove(list.size() - 1);
+            }
+        }
     }
 }
