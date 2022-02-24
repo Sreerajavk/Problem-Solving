@@ -18,9 +18,12 @@ public class SubSetSum {
         for(Integer i : sumList) {
             System.err.print(i + " ");
         }
+
+        findAllSubsets(0, arr, new ArrayList<>());
     }
 
 
+    // Functoin to print all subset sums
     static void  findAllSubsetSum(int i , int[] arr , int sum, List<Integer> sumList) {
 
         if( i >= arr.length ) {
@@ -33,6 +36,27 @@ public class SubSetSum {
 
         // not pick the item at index i
         findAllSubsetSum(i+1, arr, sum,sumList);
+        
+    }
+
+    // Function to print all the all possible subsets
+    static void  findAllSubsets(int i , int[] arr , List<Integer> list) {
+
+        if( i >= arr.length ) {
+            for(Integer ele : list) {
+                System.err.print(ele + " ");
+            }
+            System.err.println();
+            return;
+        }
+
+        // pick the item at index i
+        list.add(arr[i]);
+        findAllSubsets(i+1, arr,list);
+
+        // not pick the item at index i
+        list.remove(list.size() - 1);
+        findAllSubsets(i+1, arr, list);
         
     }
 }
