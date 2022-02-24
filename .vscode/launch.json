@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SubSetSum",
+            "request": "launch",
+            "mainClass": "Recursion.SubSetSum",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
             "name": "Launch SubsequencWithSum",
             "request": "launch",
             "mainClass": "Recursion.SubsequencWithSum",
