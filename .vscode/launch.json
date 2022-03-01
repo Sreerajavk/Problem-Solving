@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Permutations",
+            "request": "launch",
+            "mainClass": "Recursion.Permutations",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnySubSequenceWithSum",
+            "request": "launch",
+            "mainClass": "Recursion.AnySubSequenceWithSum",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
             "name": "Launch SubSetSum",
             "request": "launch",
             "mainClass": "Recursion.SubSetSum",

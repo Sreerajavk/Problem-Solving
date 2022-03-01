@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.lang.model.element.Element;
-
-import org.omg.PortableInterceptor.INACTIVE;
-
 /*
     program to print all possible subset sum in increasing order
 */
