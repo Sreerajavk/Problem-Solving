@@ -12,12 +12,11 @@ public class Permutations {
     public static void main(String[] args) {
         
 
-        int[] arr = { 2,1,3};
+        int[] arr = { 1,2,3};
         int[] bit = { 0,0,0};
 
-        printAllPermutations(arr , new ArrayList<Integer>() , bit);
-
-
+        //printAllPermutations(arr , new ArrayList<Integer>() , bit);
+        printAllPermutationsOptimised(0, arr);
     }
 
     static void printAllPermutations(int[] arr , List<Integer> list, int[] bit) {
@@ -38,6 +37,29 @@ public class Permutations {
             }
 
         }
+    }
+
+    static void printAllPermutationsOptimised(int i , int[] arr) {
+
+        if( i >= arr.length ) {
+            for(int ele : arr) {
+                System.err.print(ele);
+            }
+            System.err.println();
+            return;
+        }
+
+        for(int j=i; j<arr.length; j++) {
+            swap(i, j, arr);
+            printAllPermutationsOptimised(i+1, arr);
+            swap(i, j, arr);
+        }
+    }
+
+    static void swap(int first , int second , int[] arr) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
     }
     
 }
