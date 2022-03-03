@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NQueens",
+            "request": "launch",
+            "mainClass": "Recursion.NQueens",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
             "name": "Launch Permutations",
             "request": "launch",
             "mainClass": "Recursion.Permutations",
