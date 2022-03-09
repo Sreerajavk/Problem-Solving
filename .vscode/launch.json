@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Sudoko",
+            "request": "launch",
+            "mainClass": "Recursion.Sudoko",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
             "name": "Launch NQueens",
             "request": "launch",
             "mainClass": "Recursion.NQueens",
