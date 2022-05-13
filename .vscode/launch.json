@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch KthPermuation",
+            "request": "launch",
+            "mainClass": "Recursion.KthPermuation",
+            "projectName": "Coding_1225ce4a"
+        },
+        {
+            "type": "java",
             "name": "Launch Sudoko",
             "request": "launch",
             "mainClass": "Recursion.Sudoko",

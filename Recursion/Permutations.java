@@ -12,7 +12,7 @@ public class Permutations {
     public static void main(String[] args) {
         
 
-        int[] arr = { 1,2,3};
+        int[] arr = { 1,2,3,4};
         int[] bit = { 0,0,0};
 
         //printAllPermutations(arr , new ArrayList<Integer>() , bit);
