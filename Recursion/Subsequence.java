@@ -13,8 +13,8 @@ public class Subsequence {
     public static void main(String[] args) {
         
         int[] arr = {2,3,6,7,5,8};
-        //subSeq(0, new ArrayList<>(), arr);
-        subSeqOfSizeK(0, new ArrayList<>(), arr,2);
+        subSeq(0, new ArrayList<>(), arr);
+        //subSeqOfSizeK(0, new ArrayList<>(), arr,2);
     }
 
 
